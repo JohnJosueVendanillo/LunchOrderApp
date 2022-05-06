@@ -9,26 +9,33 @@ public class App {
         new FoodTransactions("French Fries",1.30,11,36,4,0),
         new FoodTransactions("Soda",0.95,0,38,0,0)
     };
-
-
     public static void main(String[] args){
         display();
     }
 
-
     public static void display(){
-       int total = 0;
-        
+       double total = 0;
+       
+       int select;
         for(FoodTransactions myFood: myOrders){
-            
               myFood.showOrder();
               total += myFood.priceCalculate();
-            // System.out.println(myFood.showOrder());
+     
         }
-        System.out.println("Your order comes: " + total);
-        
+        System.out.println("Your order comes: " +"$"+ total);
+        System.out.println("Order again? Press any key if YES, Press 0 to exit");
+        System.out.println("Enter: ");
+        select = order.nextInt();
+
+        if (select == 0){
+            System.exit(0);
+        }
+        else{
+            for(FoodTransactions myFood: myOrders){
+                myFood.resetTotal();
+          }
+          
             display();
+        }
     }
-
-
 }

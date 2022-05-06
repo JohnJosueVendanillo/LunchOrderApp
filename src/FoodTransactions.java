@@ -30,9 +30,14 @@ public class FoodTransactions {
        double subTotal = 0;
         subTotal = this.itemPrice * this.orderQty;
 
-         System.out.println("Output: " + this.itemPrice + "Output: " + subTotal);
+         System.out.println("Output of item price: " + this.itemPrice + "Output of subtotal: " + subTotal);
         return subTotal;
+ 
       }
 
-    
+    public void resetTotal(){
+        this.orderQty = 0;
+
+        
+    }
 }
